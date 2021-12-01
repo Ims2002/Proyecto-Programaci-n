@@ -29,14 +29,15 @@ public class Ejercicio16 {
             puntosCPU = 0;
             puntosPlayer = 0;
             do {      
-               System.out.println("Jugador lanza el dado al aire ...");
+              /* System.out.println("Jugador lanza el dado al aire ...");
                Thread.sleep(DELAY);
                tiradaPlayer = numeroAleatorio(6,1);
                System.out.println("\n*****");               
                System.out.println("* " + tiradaPlayer + " *");               
                System.out.println("*****");               
                puntosPlayer += tiradaPlayer;               
-               System.out.println("\nTu puntuación actual es " + puntosPlayer);
+               System.out.println("\nTu puntuación actual es " + puntosPlayer);*/
+               puntosJugador();
                if(puntosPlayer < 11) {
                   System.out.print("¿Deseas plantarte con " + puntosPlayer +" puntos? (s/n): ");
                   plantarse = lector.nextLine().charAt(0); 
@@ -45,14 +46,7 @@ public class Ejercicio16 {
                      plantado = false;
                      //Ahora la CPU intenta igualar o mejorar el resultado del jugador
                      while(puntosCPU < puntosPlayer) {
-                        System.out.println("CPU lanza el dado al aire ...");
-                        Thread.sleep(DELAY);                        
-                        tiradaCPU = numeroAleatorio(6,1);
-                        System.out.println("\n?????");               
-                        System.out.println("? " + tiradaCPU + " ?");               
-                        System.out.println("?????\n");                        
-                        puntosCPU += tiradaCPU;
-                        System.out.println("La puntuación actual de la CPU es " +puntosCPU);
+                        puntosCPU();
                      }
                      if(puntosCPU > 11) {
                         System.out.println("CPU se ha pasado. Porra para Player!!");
@@ -125,6 +119,29 @@ public class Ejercicio16 {
       } while(opcion != 0);
       System.out.println("Hasta pronto!!");
    }
+   public static int puntosCPU() {
+   	System.out.println("CPU lanza el dado al aire ...");
+        Thread.sleep(DELAY);                        
+        tiradaCPU = numeroAleatorio(6,1);
+        System.out.println("\n?????");               
+        System.out.println("? " + tiradaCPU + " ?");               
+        System.out.println("?????\n");                        
+        System.out.println("La puntuación actual de la CPU es " +puntosCPU);
+        return puntosCPU;
+   }
+   
+   public static int puntosJugador() {
+   	System.out.println("Jugador lanza el dado al aire ...");
+        Thread.sleep(DELAY);
+        tiradaPlayer = numeroAleatorio(6,1);
+        System.out.println("\n*****");               
+        System.out.println("* " + tiradaPlayer + " *");               
+        System.out.println("*****");               
+        puntosPlayer += tiradaPlayer;               
+        System.out.println("\nTu puntuación actual es " + puntosPlayer);
+        return puntosPlayer;
+   }
+   
    public static int numeroAleatorio(int max, int min) {
    	Random r = new Random();
    	int numAlea = r.nextInt(max - min + 1) + min;
