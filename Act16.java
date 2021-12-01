@@ -31,7 +31,7 @@ public class Ejercicio16 {
             do {      
                System.out.println("Jugador lanza el dado al aire ...");
                Thread.sleep(DELAY);
-               tiradaPlayer = r.nextInt(6 - 1 + 1) + 1;
+               tiradaPlayer = numeroAleatorio(6,1);
                System.out.println("\n*****");               
                System.out.println("* " + tiradaPlayer + " *");               
                System.out.println("*****");               
@@ -47,7 +47,7 @@ public class Ejercicio16 {
                      while(puntosCPU < puntosPlayer) {
                         System.out.println("CPU lanza el dado al aire ...");
                         Thread.sleep(DELAY);                        
-                        tiradaCPU = r.nextInt(6 - 1 + 1) + 1;
+                        tiradaCPU = numeroAleatorio(6,1);
                         System.out.println("\n?????");               
                         System.out.println("? " + tiradaCPU + " ?");               
                         System.out.println("?????\n");                        
@@ -124,6 +124,11 @@ public class Ejercicio16 {
          }
       } while(opcion != 0);
       System.out.println("Hasta pronto!!");
+   }
+   public static int numeroAleatorio(int max, int min) {
+   	Random r = new Random();
+   	int numAlea = r.nextInt(max - min + 1) + min;
+   	return numAlea;
    }
 }
 
