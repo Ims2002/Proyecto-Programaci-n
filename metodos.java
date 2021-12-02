@@ -29,11 +29,20 @@ public static int puntosCPU() {
    
     public static int once(int porras) {
 
-    System.out.println("\n$$$$$$$$$$$$$$$$");
-    System.out.println("$$$$ ¡ONCE! $$$$");
-    System.out.println("$$$$$$$$$$$$$$$$");
-    System.out.println("\nDoble porra para CPU\n");
+      System.out.println("\n$$$$$$$$$$$$$$$$");
+      System.out.println("$$$$ ¡ONCE! $$$$");
+      System.out.println("$$$$$$$$$$$$$$$$");
+      System.out.println("\nDoble porra para CPU\n");
        
+    } 
+    public static int menu(int opcion){
+         System.out.println("***************************");
+         System.out.println("*** JUEGO DE DADOS ONCE ***");
+         System.out.println("***************************");
+         System.out.println("1. Nueva partida ...");
+         System.out.println("0. Salir");
+         System.out.print("\nElige una opción: ");
+         return opcion = Integer.parseInt(lector.nextLine());
     }
 
 
