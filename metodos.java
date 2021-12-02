@@ -44,6 +44,14 @@ public static int puntosCPU() {
          System.out.print("\nElige una opción: ");
          return opcion = Integer.parseInt(lector.nextLine());
     }
+   
+    public staic int marcador(int porrasPlayer, int porrasCPU){
+        System.out.println("\n**********************");
+        System.out.println("* " + porrasPlayer + " PLAYER  -  CPU " +porrasCPU + " *");
+        System.out.println("**********************");
+        System.out.print("\nPulsa intro para continuar...");
+        return lector.nextLine();
+    }
 
 
 
