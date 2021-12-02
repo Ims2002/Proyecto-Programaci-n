@@ -4,7 +4,7 @@ public static int puntosCPU() {
         tiradaCPU = numeroAleatorio(6,1);
         System.out.println("\n?????");               
         System.out.println("? " + tiradaCPU + " ?");               
-        System.out.println("?????\n");                        
+        System.out.println("?????\n");   
         System.out.println("La puntuación actual de la CPU es " +puntosCPU);
         return puntosCPU;
    }
@@ -26,3 +26,41 @@ public static int puntosCPU() {
    	int numAlea = r.nextInt(max - min + 1) + min;
    	return numAlea;
    }
+   
+    public static int onceCPU(int porras) {
+
+      System.out.println("\n$$$$$$$$$$$$$$$$");
+      System.out.println("$$$$ ¡ONCE! $$$$");
+      System.out.println("$$$$$$$$$$$$$$$$");
+      System.out.println("\nDoble porra para CPU\n");
+       
+    } 
+    public static int menu(int opcion){
+         System.out.println("***************************");
+         System.out.println("*** JUEGO DE DADOS ONCE ***");
+         System.out.println("***************************");
+         System.out.println("1. Nueva partida ...");
+         System.out.println("0. Salir");
+         System.out.print("\nElige una opción: ");
+         return opcion = Integer.parseInt(lector.nextLine());
+    }
+   
+    public static int marcador(int porrasPlayer, int porrasCPU){
+        System.out.println("\n**********************");
+        System.out.println("* " + porrasPlayer + " PLAYER  -  CPU " +porrasCPU + " *");
+        System.out.println("**********************");
+        System.out.print("\nPulsa intro para continuar...");
+        return lector.nextLine();
+    }
+    
+    public static int oncePlayer(int puntosPlayer){
+       System.out.println("\n$$$$$$$$$$$$$$$$");
+       System.out.println("$$$$ ¡ONCE! $$$$");
+       System.out.println("$$$$$$$$$$$$$$$$");
+       System.out.println("\n¡Bonificación! Doble porra");
+    }
+
+
+
+
+

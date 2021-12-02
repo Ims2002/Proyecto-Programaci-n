@@ -16,13 +16,13 @@ public class Ejercicio16 {
       char plantarse;
 
       do {
-         System.out.println("***************************");
+         /*System.out.println("***************************");
          System.out.println("*** JUEGO DE DADOS ONCE ***");
          System.out.println("***************************");
          System.out.println("1. Nueva partida ...");
          System.out.println("0. Salir");
          System.out.print("\nElige una opción: ");
-         opcion = Integer.parseInt(lector.nextLine());
+         opcion = Integer.parseInt(lector.nextLine());*/
          if(opcion == 1) {
             porrasCPU = 0;
             porrasPlayer = 0;
@@ -55,11 +55,11 @@ public class Ejercicio16 {
                         puntosPlayer = 0;
                      } else if(puntosCPU > puntosPlayer) { // Gana CPU
                         if(puntosCPU == 11) {
-                           System.out.println("\n$$$$$$$$$$$$$$$$");
+                           /*System.out.println("\n$$$$$$$$$$$$$$$$");
                            System.out.println("$$$$ ¡ONCE! $$$$");
                            System.out.println("$$$$$$$$$$$$$$$$");
                            System.out.println("\nDoble porra para CPU\n");
-                           porrasCPU += 2;
+                           porrasCPU += 2;*/
                         } else {
                            System.out.println("CPU ha mejorado tu puntuación. Porra para CPU!!");
                            porrasCPU++;   
@@ -74,21 +74,23 @@ public class Ejercicio16 {
                         porrasPlayer++;                          
                      }
                      
-                     System.out.println("\n**********************");
+                     /*System.out.println("\n**********************");
                      System.out.println("* " + porrasPlayer + " PLAYER  -  CPU " +porrasCPU + " *");
                      System.out.println("**********************");
                      System.out.print("\nPulsa intro para continuar...");
-                     lector.nextLine();
+                     lector.nextLine();*/
                   }
                } else if (puntosPlayer == 11) {                  
                   //Al obtener 11 el jugador suma automáticamente 2 porras
                   porrasPlayer += 2;
                   puntosCPU = 0;
                   puntosPlayer = 0;
+                  /*
                   System.out.println("\n$$$$$$$$$$$$$$$$");
                   System.out.println("$$$$ ¡ONCE! $$$$");
                   System.out.println("$$$$$$$$$$$$$$$$");
                   System.out.println("\n¡Bonificación! Doble porra");
+                  */
                   
                   System.out.println("\n**********************");
                   System.out.println("* " + porrasPlayer + " PLAYER  -  CPU " +porrasCPU + " *");
