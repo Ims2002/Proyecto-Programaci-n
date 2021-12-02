@@ -26,3 +26,18 @@ public static int puntosCPU() {
    	int numAlea = r.nextInt(max - min + 1) + min;
    	return numAlea;
    }
+   
+    public static int once(int porras) {
+
+    System.out.println("\n$$$$$$$$$$$$$$$$");
+    System.out.println("$$$$ ¡ONCE! $$$$");
+    System.out.println("$$$$$$$$$$$$$$$$");
+    System.out.println("\nDoble porra para CPU\n");
+       
+    }
+
+
+
+
+
+
