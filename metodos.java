@@ -27,7 +27,7 @@ public static int puntosCPU() {
    	return numAlea;
    }
    
-    public static int once(int porras) {
+    public static int onceCPU(int porras) {
 
       System.out.println("\n$$$$$$$$$$$$$$$$");
       System.out.println("$$$$ ¡ONCE! $$$$");
@@ -45,14 +45,20 @@ public static int puntosCPU() {
          return opcion = Integer.parseInt(lector.nextLine());
     }
    
-    public staic int marcador(int porrasPlayer, int porrasCPU){
+    public static int marcador(int porrasPlayer, int porrasCPU){
         System.out.println("\n**********************");
         System.out.println("* " + porrasPlayer + " PLAYER  -  CPU " +porrasCPU + " *");
         System.out.println("**********************");
         System.out.print("\nPulsa intro para continuar...");
         return lector.nextLine();
     }
-
+    
+    public static int oncePlayer(int puntosPlayer){
+       System.out.println("\n$$$$$$$$$$$$$$$$");
+       System.out.println("$$$$ ¡ONCE! $$$$");
+       System.out.println("$$$$$$$$$$$$$$$$");
+       System.out.println("\n¡Bonificación! Doble porra");
+    }
 
 
 
