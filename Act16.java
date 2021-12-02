@@ -16,13 +16,13 @@ public class Ejercicio16 {
       char plantarse;
 
       do {
-         System.out.println("***************************");
+         /*System.out.println("***************************");
          System.out.println("*** JUEGO DE DADOS ONCE ***");
          System.out.println("***************************");
          System.out.println("1. Nueva partida ...");
          System.out.println("0. Salir");
          System.out.print("\nElige una opción: ");
-         opcion = Integer.parseInt(lector.nextLine());
+         opcion = Integer.parseInt(lector.nextLine());*/
          if(opcion == 1) {
             porrasCPU = 0;
             porrasPlayer = 0;
