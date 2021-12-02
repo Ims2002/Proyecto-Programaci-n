@@ -5,7 +5,6 @@ public static int puntosCPU() {
         System.out.println("\n?????");               
         System.out.println("? " + tiradaCPU + " ?");               
         System.out.println("?????\n");   
-        System.out.println("Test");
         System.out.println("La puntuación actual de la CPU es " +puntosCPU);
         return puntosCPU;
    }
