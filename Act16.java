@@ -85,10 +85,12 @@ public class Ejercicio16 {
                   porrasPlayer += 2;
                   puntosCPU = 0;
                   puntosPlayer = 0;
+                  /*
                   System.out.println("\n$$$$$$$$$$$$$$$$");
                   System.out.println("$$$$ ¡ONCE! $$$$");
                   System.out.println("$$$$$$$$$$$$$$$$");
                   System.out.println("\n¡Bonificación! Doble porra");
+                  */
                   
                   System.out.println("\n**********************");
                   System.out.println("* " + porrasPlayer + " PLAYER  -  CPU " +porrasCPU + " *");
