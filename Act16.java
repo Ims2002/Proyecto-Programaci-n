@@ -47,11 +47,8 @@ public class Ejercicio16 {
                         puntosPlayer = 0;
                      } else if(puntosCPU > puntosPlayer) { // Gana CPU
                         if(puntosCPU == 11) {
-                           /*System.out.println("\n$$$$$$$$$$$$$$$$");
-                           System.out.println("$$$$ ¡ONCE! $$$$");
-                           System.out.println("$$$$$$$$$$$$$$$$");
-                           System.out.println("\nDoble porra para CPU\n");
-                           porrasCPU += 2;*/
+                           once();
+                           porrasCPU += 2;
                         } else {
                            System.out.println("CPU ha mejorado tu puntuación. Porra para CPU!!");
                            porrasCPU++;   
@@ -66,29 +63,16 @@ public class Ejercicio16 {
                         porrasPlayer++;                          
                      }
                      
-                     /*System.out.println("\n**********************");
-                     System.out.println("* " + porrasPlayer + " PLAYER  -  CPU " +porrasCPU + " *");
-                     System.out.println("**********************");
-                     System.out.print("\nPulsa intro para continuar...");
-                     lector.nextLine();*/
+                     resultTirada(porrasCPU, porrasPlayer);
                   }
                } else if (puntosPlayer == 11) {                  
                   //Al obtener 11 el jugador suma automáticamente 2 porras
                   porrasPlayer += 2;
                   puntosCPU = 0;
                   puntosPlayer = 0;
-                  /*
-                  System.out.println("\n$$$$$$$$$$$$$$$$");
-                  System.out.println("$$$$ ¡ONCE! $$$$");
-                  System.out.println("$$$$$$$$$$$$$$$$");
-                  System.out.println("\n¡Bonificación! Doble porra");
-                  */
+                  once();
                   
-                  System.out.println("\n**********************");
-                  System.out.println("* " + porrasPlayer + " PLAYER  -  CPU " +porrasCPU + " *");
-                  System.out.println("**********************");
-                  System.out.print("\nPulsa intro para continuar...");
-                  lector.nextLine();
+                  resultTirada(porrasCPU, porrasPlayer);
                } else {
                   //El jugador se ha pasado
                   System.out.println("Ohh!! Te has pasado");
@@ -96,11 +80,7 @@ public class Ejercicio16 {
                   porrasCPU += 1;
                   puntosCPU = 0;
                   puntosPlayer = 0;
-                  System.out.println("\n**********************");
-                  System.out.println("* " + porrasPlayer + " PLAYER  -  CPU " +porrasCPU + " *");
-                  System.out.println("**********************");
-                  System.out.print("\nPulsa intro para continuar...");
-                  lector.nextLine();
+                  resultTirada(porrasCPU, porrasPlayer);
                }
                
             } while(porrasPlayer < 5 && porrasCPU < 5);
@@ -141,5 +121,18 @@ public class Ejercicio16 {
    	int numAlea = r.nextInt(max - min + 1) + min;
    	return numAlea;
    }
+   public static void resultTirada(int porrasCPU, int porrasPlayer){
+       Scanner lector = new Scanner(System.in);
+       System.out.println("\n**********************");
+        System.out.println("* " + porrasPlayer + " PLAYER  -  CPU " +porrasCPU + " *");
+        System.out.println("**********************");
+        System.out.print("\nPulsa intro para continuar...");
+        lector.nextLine();
+    }
+    public static void once(){
+        System.out.println("\n$$$$$$$$$$$$$$$$");
+        System.out.println("$$$$ ¡ONCE! $$$$");
+        System.out.println("$$$$$$$$$$$$$$$$");
+    }
 }
 
