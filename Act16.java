@@ -37,12 +37,12 @@ public class Ejercicio16 {
                         tiradaCPU();
                      }
                      if(puntosCPU > 11) {
-                        sePasaCpu();
+                        sePasaCpu(puntosCPU);
                      } else if(puntosCPU > puntosPlayer) { // Gana CPU
                         if(puntosCPU == 11) {
-                           dosPorrasCpu();
+                           dosPorrasCpu(porrasCPU);
                         } else {
-                           porraCpu();      
+                           porraCpu(porrasCPU);      
                         }
                         puntosCPU = 0;
                         puntosPlayer = 0;
@@ -57,7 +57,7 @@ public class Ejercicio16 {
                      resultTirada(porrasCPU, porrasPlayer);
                   }
                } else if (puntosPlayer == 11) {                  
-                  dosPorrasPersona();
+                  dosPorrasPersona(porrasPlayer);
                   
                   resultTirada(porrasCPU, porrasPlayer);
                } else {
@@ -118,7 +118,7 @@ public class Ejercicio16 {
          }
    }
    
-   public static void sePasaPersona() { 
+   public static int sePasaPersona() { 
          System.out.println("Ohh!! Te has pasado");
          System.out.println("Porra para la CPU");                  
          porrasCPU += 1;
