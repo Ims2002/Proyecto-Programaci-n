@@ -31,27 +31,18 @@ public class Ejercicio16 {
             do {      
                tiradaJugador();
                if(puntosPlayer < 11) {
-                  System.out.print("¿Deseas plantarte con " + puntosPlayer +" puntos? (s/n): ");
-                  plantarse = lector.nextLine().charAt(0); 
-                  plantado =  plantarse == 's' || plantarse == 'S';
-                  if(plantado) {
-                     plantado = false;
+                  tePlantas()
                      //Ahora la CPU intenta igualar o mejorar el resultado del jugador
                      while(puntosCPU < puntosPlayer) {
                         tiradaCPU();
                      }
                      if(puntosCPU > 11) {
-                        System.out.println("CPU se ha pasado. Porra para Player!!");
-                        porrasPlayer++;
-                        puntosCPU = 0;
-                        puntosPlayer = 0;
+                        sePasaCpu();
                      } else if(puntosCPU > puntosPlayer) { // Gana CPU
                         if(puntosCPU == 11) {
-                           once();
-                           porrasCPU += 2;
+                           dosPorrasCpu();
                         } else {
-                           System.out.println("CPU ha mejorado tu puntuación. Porra para CPU!!");
-                           porrasCPU++;   
+                           porraCpu();      
                         }
                         puntosCPU = 0;
                         puntosPlayer = 0;
@@ -66,21 +57,12 @@ public class Ejercicio16 {
                      resultTirada(porrasCPU, porrasPlayer);
                   }
                } else if (puntosPlayer == 11) {                  
-                  //Al obtener 11 el jugador suma automáticamente 2 porras
-                  porrasPlayer += 2;
-                  puntosCPU = 0;
-                  puntosPlayer = 0;
-                  once();
+                  dosPorrasPersona();
                   
                   resultTirada(porrasCPU, porrasPlayer);
                } else {
                   //El jugador se ha pasado
-                  System.out.println("Ohh!! Te has pasado");
-                  System.out.println("Porra para la CPU");                  
-                  porrasCPU += 1;
-                  puntosCPU = 0;
-                  puntosPlayer = 0;
-                  resultTirada(porrasCPU, porrasPlayer);
+                  sePasaPersona();
                }
                
             } while(porrasPlayer < 5 && porrasCPU < 5);
@@ -115,12 +97,54 @@ public class Ejercicio16 {
         System.out.println("\nTu puntuación actual es " + puntosPlayer);
         return puntosPlayer;
    }
+   public static int dosPorrasPersona() {
+      //Al obtener 11 el jugador suma automáticamente 2 porras
+      porrasPlayer += 2;
+      puntosCPU = 0;
+      puntosPlayer = 0;
+      once();
    
    public static int numeroAleatorio(int max, int min) {
    	Random r = new Random();
    	int numAlea = r.nextInt(max - min + 1) + min;
    	return numAlea;
    }
+   public static void tePlantas() {
+         System.out.print("¿Deseas plantarte con " + puntosPlayer +" puntos? (s/n): ");
+         plantarse = lector.nextLine().charAt(0); 
+         plantado =  plantarse == 's' || plantarse == 'S';
+         if(plantado) {
+               plantado = false;
+         }
+   }
+   
+   public static void sePasaPersona() { 
+         System.out.println("Ohh!! Te has pasado");
+         System.out.println("Porra para la CPU");                  
+         porrasCPU += 1;
+         puntosCPU = 0;
+         puntosPlayer = 0;
+         resultTirada(porrasCPU, porrasPlayer);
+         return porrasCPU;
+   }
+   public static int sePasaCpu() {
+      System.out.println("CPU se ha pasado. Porra para Player!!");
+      porrasPlayer++;
+      puntosCPU = 0;
+      puntosPlayer = 0;
+      return porrasPlayer;
+   }
+   public static int dosPorrasCpu() {
+      once();
+      porrasCPU += 2;
+      return porrasCPU;
+   }
+   public static int porraCpu() {
+      System.out.println("CPU ha mejorado tu puntuación. Porra para CPU!!");
+      porrasCPU++;
+      return porrasCPU;
+   }
+
    public static void resultTirada(int porrasCPU, int porrasPlayer){
        Scanner lector = new Scanner(System.in);
        System.out.println("\n**********************");
