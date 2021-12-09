@@ -16,9 +16,9 @@ public class Ejercicio16 {
       char plantarse;
 
       do {
-         System.out.println("***************************");
-         System.out.println("*** JUEGO DE DADOS ONCE ***");
-         System.out.println("***************************");
+         System.out.println("*************************");
+         System.out.println("** JUEGO DE DADOS ONCE **");
+         System.out.println("*************************");
          System.out.println("1. Nueva partida ...");
          System.out.println("0. Salir");
          System.out.print("\nElige una opción: ");
