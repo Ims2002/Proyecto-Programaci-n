@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <style>
+            .form-group {
+                width: 50%;
+                margin: auto;
+            }
+
+        
+
+        </style>
+        <form>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Nombre</label>
+                <input type="text" class="form-control" id="Nombre" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Dirección Postal</label>
+                <input type="text" class="form-control" id="Dirección Postal" placeholder="Dirección Postal">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Población</label>
+                <input type="text" class="form-control" id="Población" placeholder="Población">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">CIF</label>
+                <input type="text" class="form-control" id="CIF" placeholder="CIF">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Tel1</label>
+                <input type="text" class="form-control" id="Tel1" placeholder="Tel1">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Tel2</label>
+                <input type="text" class="form-control" id="Tel2" placeholder="Tel2">
+            </div>
+           <!-- <div class="form-group">
+                <label for="formGroupExampleInput2">IBAN</label>
+                <input type="text" class="form-control" id="IBAN" placeholder="IBAN">
+            </div>-->
+            <div class="form-group">
+                <label for="formGroupExampleInput">Correo</label>
+                <input type="email" class="form-control" id="Correo" placeholder="Correo">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Contrasena</label>
+                <input type="password" class="form-control" id="Contrasena" placeholder="Contraseña">
+            </div>
+        </form>
+        <button onclick="download_csv()" type="button" class="btn btn-primary btn-lg">Large button</button>
+
+        <script>
+           
+
+            function download_csv() {
+                var nombre = document.getElementById('Nombre').value;
+                var direccionPostal = document.getElementById('Dirección Postal').value;
+                var poblacion = document.getElementById('Población').value;
+                var CIF = document.getElementById('CIF').value;
+                var tel1 = document.getElementById('Tel1').value;
+                var tel2 = document.getElementById('Tel2').value;
+                var correo = document.getElementById('Correo').value;
+                var contrasena = document.getElementById('Contrasena').value;
+
+                var csvFileData = [
+                    [nombre],
+                    [direccionPostal],
+                    [poblacion],
+                    [CIF],
+                    [tel1],
+                    [tel2],
+                    [correo],
+                    [contrasena]
+                ];
+
+                var csv = 'nombre;direccionPostal;poblacion;CIF;Tel1;Tel2;correo;contrasena\n'; 
+                csvFileData.forEach(function(row) {
+                    csv += "'" +row+ "'" + ";";
+                });
+
+
+                var hiddenElement = document.createElement('a');
+                hiddenElement.href = 'data:text/csv;charset=utf-8,'+encodeURI(csv);
+                hiddenElement.target = '_blank';
+
+                hiddenElement.download = 'data.csv';
+                hiddenElement.click();
+
+            }
+
+            
+
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
